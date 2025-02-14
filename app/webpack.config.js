@@ -43,12 +43,12 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./index.html",
-      chunks: ["index", "main"],
+      chunks: ["index", "index"],
       filename: "index.html",
     }),
     new HtmlWebpackPlugin({
       template: "./list.html",
-      chunks: ["list", "main"],
+      chunks: ["list", "list"],
       filename: "list.html",
     }),
     // new HtmlWebpackPlugin({
