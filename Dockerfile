@@ -1,13 +1,13 @@
-# Layer 1
+# Layer 1: Build the frontend
 FROM node:latest AS builder
 WORKDIR /app
 COPY ./app/package*.json ./
 RUN npm install
 COPY ./app/ ./
 RUN npm run build 
-# in the end I have the /dist
+# Output will be in /dist
 
-# Layer 2
+# Layer 2: Backend & Web Server
 FROM debian:bookworm-slim
 
 RUN apt-get update && apt-get upgrade -y && \
@@ -26,13 +26,13 @@ COPY ./api/index.js /app/
 COPY ./api/package*.json /app/
 RUN npm install
 
-# APP
-COPY --from=builder ./app/dist /var/www/html
+COPY --from=builder /app/dist /var/www/html
 
-#
 COPY ./default.conf /etc/nginx/sites-available/default
 
-RUN echo "API_PORT=3000" >> /app/.env
+RUN sed -i 's/listen 8080;/listen 80;/' /etc/nginx/sites-available/default
+
+RUN echo "API_PORT=80" >> /app/.env
 
 EXPOSE 80
 
