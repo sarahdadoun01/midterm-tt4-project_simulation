@@ -1,14 +1,15 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student List</title>
-
+    <link rel="stylesheet" href="index.scss">
 </head>
+
 <body>
-    <div class="d-flex">
-        <!-- Sidebar-->
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
             <div class="list-group list-group-flush">
@@ -16,111 +17,41 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="list.html">List</a>
             </div>
         </div>
-        <!-- Page content wrapper-->
+        <!-- Page content wrapper -->
         <div id="page-content-wrapper">
-            <!-- Top navigation-->
+            <!-- Top navigation -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                 <div class="container-fluid">
                     <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation"><span
-                            class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                             <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#!">Messages</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Your Name</a>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#!">Action</a>
-                                    <a class="dropdown-item" href="#!">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#!">Something else here</a>
-                                </div>
-                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <!-- Page content-->
-            <h2>Student List</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Code</th>
-                        <th>Name</th>
-                        <th>Course</th>
-                        <th>Date of Birth</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>001</td>
-                        <td>John Doe</td>
-                        <td>Computer Science</td>
-                        <td>2020-05-15</td>
-                        <td>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>Sarah Doe</td>
-                        <td>Computer Science</td>
-                        <td>2020-05-15</td>
-                        <td>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>Heather Doe</td>
-                        <td>Web Design</td>
-                        <td>2021-05-15</td>
-                        <td>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>Huong Doe</td>
-                        <td>Web Design</td>
-                        <td>2021-05-15</td>
-                        <td>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>Jane Doe</td>
-                        <td>Computer Science</td>
-                        <td>2022-05-15</td>
-                        <td>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td>Allan Doe</td>
-                        <td>Computer Science</td>
-                        <td>2022-05-15</td>
-                        <td>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Page content -->
+            <div id="content" class="container-fluid p-5">
+                <h1 class="mt-4">Student List</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Date of Birth</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <!-- Dynamic rows go here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
-    <script src="index.js"></script>
+    <script src="list.js"></script>
 </body>
+
 </html>
